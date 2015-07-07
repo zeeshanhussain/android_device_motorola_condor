@@ -29,7 +29,6 @@ TARGET_BOARD_PLATFORM := msm8610
 # Architecture
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_SMP := true
 TARGET_CPU_MEMCPY_BASE_OPT_DISABLE := true
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
@@ -97,6 +96,7 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 BOARD_USES_ALSA_AUDIO := true
 AUDIO_FEATURE_ENABLED_FM := true
 AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
+AUDIO_FEATURE_LOW_LATENCY_PRIMARY := true
 
 # FM
 TARGET_QCOM_NO_FM_FIRMWARE := true
@@ -159,6 +159,7 @@ BOARD_SEPOLICY_DIRS += \
 BOARD_SEPOLICY_UNION += \
     atvc.te \
     batt_health.te \
+    bootanim.te \
     device.te \
     file.te \
     file_contexts \

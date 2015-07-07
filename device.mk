@@ -67,11 +67,6 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_TAGS += dalvik.gc.type-precise
 
-# This device is xhdpi.  However the platform doesn't
-# currently contain all of the bitmaps at xhdpi density so
-# we do this little trick to fall back to the hdpi version
-# if the xhdpi doesn't exist.
-PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 DEVICE_PACKAGE_OVERLAYS := \
@@ -193,6 +188,10 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf \
     dhcpcd.conf
+
+# Doze
+PRODUCT_PACKAGES += \
+    MotoDoze
 
 PRODUCT_PACKAGES += \
     WCNSS_qcom_wlan_factory_nv.bin
