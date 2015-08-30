@@ -63,7 +63,7 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video_le.xml
 
 PRODUCT_TAGS += dalvik.gc.type-precise
-
+=======
 # Motorola-specific permissions
 PRODUCT_COPY_FILES += \
     device/motorola/victara/permissions/com.motorola.actions.xml:system/etc/permissions/com.motorola.actions.xml \
@@ -91,6 +91,11 @@ PRODUCT_COPY_FILES += \
     device/motorola/victara/permissions/com.motorola.software.smartnotifications.xml:system/etc/permissions/com.motorola.software.smartnotifications.xml \
     device/motorola/victara/permissions/com.motorola.software.x_line.xml:system/etc/permissions/com.motorola.software.x_line.xml \
     device/motorola/victara/permissions/com.motorola.targetnotif.xml:system/etc/permissions/com.motorola.targetnotif.xml
+
+# System Properties
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=mtp
+>>>>>>> 15ed279... victara: add motorola-specific play store props and permissions
 
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
