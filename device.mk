@@ -114,6 +114,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libxml2
 
+# Audio Config
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+    $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
+    $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml
+
 # OMX
 PRODUCT_PACKAGES += \
     libdashplayer \
