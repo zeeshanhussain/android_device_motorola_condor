@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    device/condor/omni_condor.mk
+    device/motorola/condor/omni_condor.mk
