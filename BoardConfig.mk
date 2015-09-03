@@ -46,7 +46,7 @@ TARGET_KERNEL_CONFIG := cm_condor_defconfig
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 utags.blkdev=/dev/block/platform/msm_sdcc.1/by-name/utags vmalloc=400M
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 utags.blkdev=/dev/block/platform/msm_sdcc.1/by-name/utags vmalloc=400M androidboot.selinux=permissive
 
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 
@@ -93,10 +93,16 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
+AUDIO_FEATURE_DISABLED_HWDEP_CAL := true
 AUDIO_FEATURE_ENABLED_FM := true
 AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
 AUDIO_FEATURE_ENABLED_NEW_SAMPLE_RATE := true
 AUDIO_FEATURE_LOW_LATENCY_PRIMARY := true
+
+# HW Variants 
+TARGET_QCOM_DISPLAY_VARIANT := caf-bfam
+TARGET_QCOM_AUDIO_VARIANT := caf-bfam
+TARGET_QCOM_MEDIA_VARIANT := caf-bfam
 
 # FM
 TARGET_QCOM_NO_FM_FIRMWARE := true
@@ -107,9 +113,6 @@ BOARD_USES_QC_TIME_SERVICES := true
 
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := true
-
-# Hardware tunables framework
-BOARD_HARDWARE_CLASS := $(LOCAL_PATH)/cmhw/
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
@@ -196,3 +199,15 @@ endif
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
+
+#TWRP
+DEVICE_RESOLUTION := 540x960
+TARGET_USERIMAGES_USE_EXT4 := true
+RECOVERY_SDCARD_ON_DATA := true
+TW_INTERNAL_STORAGE_PATH := "/data/media"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
+TW_EXTERNAL_STORAGE_PATH := "/external_sd"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
+TW_NO_USB_STORAGE := true
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TW_IGNORE_MAJOR_AXIS_0 := true
