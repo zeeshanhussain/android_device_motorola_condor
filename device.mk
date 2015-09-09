@@ -188,9 +188,6 @@ PRODUCT_PACKAGES += \
     WCNSS_qcom_wlan_factory_nv.bin
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=240
-
-PRODUCT_PROPERTY_OVERRIDES += \
     persist.hwc.mdpcomp.enable=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -225,7 +222,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # set default USB configuration
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp
+    persist.sys.usb.config=mtp \
+    ro.sf.lcd_density=240
 
 # Prima(pronto firmware)
 PRODUCT_COPY_FILES += \
