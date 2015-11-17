@@ -39,7 +39,7 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 
 # Kernel
 BOARD_KERNEL_SEPARATED_DT := true
-BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/motorola/condor/mkbootimg.mk
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8610
 TARGET_KERNEL_CONFIG := twrp_condor_defconfig
 BOARD_KERNEL_BASE := 0x00000000
