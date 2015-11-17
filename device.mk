@@ -16,7 +16,3 @@
 
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
-
-PRODUCT_COPY_FILES += \
-    device/motorola/condor/kernel:kernel \
-    device/motorola/condor/dt.img:dt.img
