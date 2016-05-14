@@ -18,13 +18,22 @@
 # $(call inherit-product, device/sample/products/backup_overlay.mk)
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 # Inherit from condor device
 $(call inherit-product, device/motorola/condor/device.mk)
 
-PRODUCT_NAME := full_condor
+$(call inherit-product, vendor/omni/config/gsm.mk)
+
+$(call inherit-product, vendor/omni/config/common.mk)
+
+TARGET_BOOTANIMATION_SIZE := 960x540
+
+
+
+PRODUCT_NAME := omni_condor
 PRODUCT_DEVICE := condor
 PRODUCT_BRAND := motorola
 PRODUCT_MODEL := condor
 PRODUCT_MANUFACTURER := motorola
+PRODUCT_RELEASE_NAME := MOTO E
