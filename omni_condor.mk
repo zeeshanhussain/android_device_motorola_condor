@@ -27,7 +27,7 @@ $(call inherit-product, vendor/omni/config/gsm.mk)
 
 $(call inherit-product, vendor/omni/config/common.mk)
 
-TARGET_BOOTANIMATION_SIZE := 960x540
+TARGET_BOOTANIMATION_SIZE := 720x407
 
 
 
