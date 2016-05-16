@@ -33,10 +33,11 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 476184576
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 131072
 
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/fstab.qcom
 
 # Asserts
 TARGET_OTA_ASSERT_DEVICE := xt1021,xt1022,xt1023,condor_umts,condor_umtsds,condor
+
+
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_condor
@@ -45,7 +46,8 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_condor
 BOARD_SEPOLICY_DIRS += \
     device/motorola/condor/sepolicy
 
-TARGET_RECOVERY_FSTAB := device/motorola/condor/twrp.fstab
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/fstab.qcom
+
 
 
 # TWRP
@@ -58,3 +60,9 @@ TW_IGNORE_MAJOR_AXIS_0 := true
 BOARD_SUPPRESS_EMMC_WIPE := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+
+
+TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
+
+
